@@ -7,6 +7,7 @@ import { SpacingShowcase } from "./components/SpacingShowcase";
 import { ComponentShowcase } from "./components/ComponentShowcase";
 import { TokenUsage } from "./components/TokenUsage";
 import { ExportTokens } from "./components/ExportTokens";
+import logoStripe from "./assets/images/ds-logo-stripes-fuchsia.webp";
 
 export default function App() {
   const [isDark, setIsDark] = useState(false);
@@ -76,14 +77,23 @@ export default function App() {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div>
-              <h1 style={{ fontFamily: "var(--font-brand)" }}>DemoStoke Design System</h1>
+              <div className="flex items-center gap-3">
+                <img
+                  src={logoStripe}
+                  alt="DemoStoke logo"
+                  className="w-10 h-10 object-contain"
+                />
+                <h1 style={{ fontFamily: "var(--font-brand)", fontSize: "1.5em" }}>
+                  DemoStoke Design System
+                </h1>
+              </div>
               <p className="text-sm text-muted-foreground mt-1">
                 Complete token system with light & dark modes
               </p>
             </div>
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-md border hover:bg-muted transition-colors"
+              className="p-2 rounded-md border hover:bg-muted transition-colors cursor-pointer"
               aria-label="Toggle theme"
             >
               {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
