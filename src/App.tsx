@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Moon, Sun, Copy, Check } from "lucide-react";
 import { ColorSwatch } from "./components/ColorSwatch";
 import { TypographyShowcase } from "./components/TypographyShowcase";
@@ -8,10 +8,13 @@ import { ComponentShowcase } from "./components/ComponentShowcase";
 import { TokenUsage } from "./components/TokenUsage";
 import { ExportTokens } from "./components/ExportTokens";
 import logoStripe from "./assets/images/ds-logo-stripes-fuchsia.webp";
+import { useScrollToTop } from "./hooks/useScrollToTop";
 
 export default function App() {
   const [isDark, setIsDark] = useState(false);
   const [activeTab, setActiveTab] = useState("colors");
+  const pageTopRef = useRef<HTMLDivElement | null>(null);
+  useScrollToTop(activeTab, pageTopRef);
 
   const toggleTheme = () => {
     setIsDark(!isDark);
@@ -89,6 +92,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-background">
+      <div ref={pageTopRef} />
       {/* Header */}
       <header className="sticky top-0 z-20 bg-background/95 backdrop-blur">
         <div className="container mx-auto px-6 py-4">
