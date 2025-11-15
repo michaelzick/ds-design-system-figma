@@ -4,13 +4,7 @@ export function ButtonShowcase() {
       {/* Primary */}
       <div className="p-4 border rounded-lg space-y-3">
         <div className="text-sm text-muted-foreground">Primary</div>
-        <button 
-          className="px-4 py-2 rounded-md transition-opacity hover:opacity-90"
-          style={{ 
-            backgroundColor: 'var(--button-primary-bg)', 
-            color: 'var(--button-primary-fg)' 
-          }}
-        >
+        <button className="px-4 py-2 rounded-md transition-opacity hover:opacity-90 token-button-primary">
           Primary Button
         </button>
       </div>
@@ -18,13 +12,7 @@ export function ButtonShowcase() {
       {/* Secondary */}
       <div className="p-4 border rounded-lg space-y-3">
         <div className="text-sm text-muted-foreground">Secondary</div>
-        <button 
-          className="px-4 py-2 rounded-md transition-opacity hover:opacity-90"
-          style={{ 
-            backgroundColor: 'var(--button-secondary-bg)', 
-            color: 'var(--button-secondary-fg)' 
-          }}
-        >
+        <button className="px-4 py-2 rounded-md transition-opacity hover:opacity-90 token-button-secondary">
           Secondary Button
         </button>
       </div>
@@ -32,13 +20,7 @@ export function ButtonShowcase() {
       {/* Accent */}
       <div className="p-4 border rounded-lg space-y-3">
         <div className="text-sm text-muted-foreground">Accent</div>
-        <button 
-          className="px-4 py-2 rounded-md transition-opacity hover:opacity-90"
-          style={{ 
-            backgroundColor: 'var(--button-accent-bg)', 
-            color: 'var(--button-accent-fg)' 
-          }}
-        >
+        <button className="px-4 py-2 rounded-md transition-opacity hover:opacity-90 token-button-accent">
           Accent Button
         </button>
       </div>
@@ -46,13 +28,7 @@ export function ButtonShowcase() {
       {/* Muted */}
       <div className="p-4 border rounded-lg space-y-3">
         <div className="text-sm text-muted-foreground">Muted</div>
-        <button 
-          className="px-4 py-2 rounded-md transition-opacity hover:opacity-90"
-          style={{ 
-            backgroundColor: 'var(--button-muted-bg)', 
-            color: 'var(--button-muted-fg)' 
-          }}
-        >
+        <button className="px-4 py-2 rounded-md transition-opacity hover:opacity-90 token-button-muted">
           Muted Button
         </button>
       </div>
@@ -60,13 +36,7 @@ export function ButtonShowcase() {
       {/* Destructive */}
       <div className="p-4 border rounded-lg space-y-3">
         <div className="text-sm text-muted-foreground">Destructive</div>
-        <button 
-          className="px-4 py-2 rounded-md transition-opacity hover:opacity-90"
-          style={{ 
-            backgroundColor: 'var(--button-destructive-bg)', 
-            color: 'var(--button-destructive-fg)' 
-          }}
-        >
+        <button className="px-4 py-2 rounded-md transition-opacity hover:opacity-90 token-button-destructive">
           Destructive Button
         </button>
       </div>
@@ -74,13 +44,7 @@ export function ButtonShowcase() {
       {/* Ghost */}
       <div className="p-4 border rounded-lg space-y-3">
         <div className="text-sm text-muted-foreground">Ghost</div>
-        <button 
-          className="px-4 py-2 rounded-md transition-all hover:bg-muted"
-          style={{ 
-            backgroundColor: 'var(--button-ghost-bg)', 
-            color: 'var(--button-ghost-fg)' 
-          }}
-        >
+        <button className="px-4 py-2 rounded-md transition-all hover:bg-muted token-button-ghost">
           Ghost Button
         </button>
       </div>
@@ -88,14 +52,7 @@ export function ButtonShowcase() {
       {/* Outline */}
       <div className="p-4 border rounded-lg space-y-3">
         <div className="text-sm text-muted-foreground">Outline</div>
-        <button 
-          className="px-4 py-2 rounded-md border transition-all hover:bg-muted"
-          style={{ 
-            backgroundColor: 'var(--button-outline-bg)', 
-            color: 'var(--button-outline-fg)',
-            borderColor: 'var(--button-outline-border)'
-          }}
-        >
+        <button className="px-4 py-2 rounded-md border transition-all hover:bg-muted token-button-outline">
           Outline Button
         </button>
       </div>
@@ -103,13 +60,7 @@ export function ButtonShowcase() {
       {/* Shop (Special) */}
       <div className="p-4 border rounded-lg space-y-3">
         <div className="text-sm text-muted-foreground">Shop (Special)</div>
-        <button 
-          className="px-4 py-2 rounded-md transition-opacity hover:opacity-90"
-          style={{ 
-            backgroundColor: 'var(--shop)', 
-            color: 'var(--shop-foreground)' 
-          }}
-        >
+        <button className="px-4 py-2 rounded-md transition-opacity hover:opacity-90 shop-accent">
           Shop Button
         </button>
       </div>

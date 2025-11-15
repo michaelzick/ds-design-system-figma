@@ -54,13 +54,7 @@ export function ComponentShowcase() {
             <CardContent>
               <div className="space-y-3">
                 <div className="text-2xl font-medium">$99.00</div>
-                <button 
-                  className="w-full px-4 py-2 rounded-md transition-opacity hover:opacity-90"
-                  style={{ 
-                    backgroundColor: 'var(--shop)', 
-                    color: 'var(--shop-foreground)' 
-                  }}
-                >
+                <button className="w-full px-4 py-2 rounded-md transition-opacity hover:opacity-90 shop-accent">
                   <ShoppingCart className="w-4 h-4 inline mr-2" />
                   Add to Cart
                 </button>
@@ -101,9 +95,8 @@ export function ComponentShowcase() {
               <Label htmlFor="message">Message</Label>
               <textarea
                 id="message"
-                className="w-full px-3 py-2 rounded-md border bg-background min-h-[100px] resize-y"
+                className="w-full px-3 py-2 rounded-md border bg-background min-h-[100px] resize-y token-border-input"
                 placeholder="Your message here..."
-                style={{ borderColor: 'var(--input)' }}
               />
             </div>
 
@@ -154,42 +147,22 @@ export function ComponentShowcase() {
             </AlertDescription>
           </Alert>
 
-          <div 
-            className="p-4 rounded-md border"
-            style={{ 
-              backgroundColor: 'var(--ocean-light)', 
-              borderColor: 'var(--ocean)' 
-            }}
-          >
+          <div className="p-4 rounded-md border alert-ocean">
             <div className="flex gap-3">
-              <Bell className="h-5 w-5" style={{ color: 'var(--ocean)' }} />
+              <Bell className="h-5 w-5 alert-ocean-icon" />
               <div>
-                <div className="font-medium" style={{ color: 'var(--ocean-deep)' }}>
-                  Ocean Theme Alert
-                </div>
-                <div className="text-sm mt-1" style={{ color: 'var(--ocean-deep)' }}>
-                  Custom alert using primitive ocean color tokens.
-                </div>
+                <div className="font-medium alert-ocean-text">Ocean Theme Alert</div>
+                <div className="text-sm mt-1 alert-ocean-text">Custom alert using primitive ocean color tokens.</div>
               </div>
             </div>
           </div>
 
-          <div 
-            className="p-4 rounded-md border"
-            style={{ 
-              backgroundColor: 'var(--sand-light)', 
-              borderColor: 'var(--sand-dark)' 
-            }}
-          >
+          <div className="p-4 rounded-md border alert-sand">
             <div className="flex gap-3">
-              <Bell className="h-5 w-5" style={{ color: 'var(--sand-dark)' }} />
+              <Bell className="h-5 w-5 alert-sand-icon" />
               <div>
-                <div className="font-medium" style={{ color: 'var(--mountain-dark)' }}>
-                  Sand Theme Alert
-                </div>
-                <div className="text-sm mt-1" style={{ color: 'var(--mountain-dark)' }}>
-                  Custom alert using primitive sand color tokens.
-                </div>
+                <div className="font-medium alert-sand-text">Sand Theme Alert</div>
+                <div className="text-sm mt-1 alert-sand-text">Custom alert using primitive sand color tokens.</div>
               </div>
             </div>
           </div>
@@ -204,31 +177,13 @@ export function ComponentShowcase() {
           <Badge variant="secondary">Secondary</Badge>
           <Badge variant="outline">Outline</Badge>
           <Badge variant="destructive">Destructive</Badge>
-          <Badge 
-            className="border-0"
-            style={{ 
-              backgroundColor: 'var(--ocean)', 
-              color: 'white' 
-            }}
-          >
+          <Badge className="border-0 badge-ocean">
             Ocean
           </Badge>
-          <Badge 
-            className="border-0"
-            style={{ 
-              backgroundColor: 'var(--sand)', 
-              color: 'var(--mountain-dark)' 
-            }}
-          >
+          <Badge className="border-0 badge-sand">
             Sand
           </Badge>
-          <Badge 
-            className="border-0"
-            style={{ 
-              backgroundColor: 'var(--shop)', 
-              color: 'var(--shop-foreground)' 
-            }}
-          >
+          <Badge className="border-0 badge-shop">
             Shop
           </Badge>
         </div>

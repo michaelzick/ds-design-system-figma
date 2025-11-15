@@ -3,9 +3,7 @@ export function TypographyShowcase() {
     <div className="space-y-6">
       <div className="flex items-baseline gap-4 p-4 border rounded-lg">
         <div className="w-24 text-sm text-muted-foreground shrink-0">Display</div>
-        <div style={{ fontSize: 'var(--text-display-size)', lineHeight: 'var(--text-lineheight-tight)' }}>
-          The quick brown fox
-        </div>
+        <div className="type-display">The quick brown fox</div>
       </div>
       
       <div className="flex items-baseline gap-4 p-4 border rounded-lg">
@@ -40,9 +38,7 @@ export function TypographyShowcase() {
       
       <div className="flex items-baseline gap-4 p-4 border rounded-lg">
         <div className="w-24 text-sm text-muted-foreground shrink-0">Body Large</div>
-        <div style={{ fontSize: 'var(--text-body-lg-size)', lineHeight: 'var(--text-lineheight-normal)' }}>
-          The quick brown fox jumps over the lazy dog
-        </div>
+        <div className="type-body-lg">The quick brown fox jumps over the lazy dog</div>
       </div>
       
       <div className="flex items-baseline gap-4 p-4 border rounded-lg">
@@ -52,9 +48,7 @@ export function TypographyShowcase() {
       
       <div className="flex items-baseline gap-4 p-4 border rounded-lg">
         <div className="w-24 text-sm text-muted-foreground shrink-0">Body Small</div>
-        <div style={{ fontSize: 'var(--text-body-sm-size)', lineHeight: 'var(--text-lineheight-normal)' }}>
-          The quick brown fox jumps over the lazy dog
-        </div>
+        <div className="type-body-sm">The quick brown fox jumps over the lazy dog</div>
       </div>
       
       <div className="flex items-baseline gap-4 p-4 border rounded-lg">
@@ -64,9 +58,7 @@ export function TypographyShowcase() {
       
       <div className="flex items-baseline gap-4 p-4 border rounded-lg">
         <div className="w-24 text-sm text-muted-foreground shrink-0">Label Small</div>
-        <div style={{ fontSize: 'var(--text-label-sm-size)', lineHeight: 'var(--text-lineheight-normal)' }}>
-          Small label text - The quick brown fox
-        </div>
+        <div className="type-label-sm">Small label text - The quick brown fox</div>
       </div>
     </div>
   );

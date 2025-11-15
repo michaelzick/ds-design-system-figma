@@ -19,44 +19,54 @@ export default function App() {
   };
 
   const brandColors = [
-    { name: "Brand Primary", value: "var(--brand-primary)", description: "Primary brand color" },
+    {
+      name: "Brand Primary",
+      value: "var(--brand-primary)",
+      description: "Primary brand color",
+      backgroundClassName: "swatch-brand-primary",
+    },
   ];
 
   const primitiveColors = [
-    { name: "Ocean Light", value: "var(--ocean-light)", description: "" },
-    { name: "Ocean", value: "var(--ocean)", description: "" },
-    { name: "Ocean Deep", value: "var(--ocean-deep)", description: "" },
-    { name: "Sand Light", value: "var(--sand-light)", description: "" },
-    { name: "Sand", value: "var(--sand)", description: "" },
-    { name: "Sand Dark", value: "var(--sand-dark)", description: "" },
-    { name: "Mountain", value: "var(--mountain)", description: "" },
-    { name: "Mountain Dark", value: "var(--mountain-dark)", description: "" },
-    { name: "Shop", value: "var(--shop)", description: "Special accent color" },
+    { name: "Ocean Light", value: "var(--ocean-light)", description: "", backgroundClassName: "swatch-ocean-light" },
+    { name: "Ocean", value: "var(--ocean)", description: "", backgroundClassName: "swatch-ocean" },
+    { name: "Ocean Deep", value: "var(--ocean-deep)", description: "", backgroundClassName: "swatch-ocean-deep" },
+    { name: "Sand Light", value: "var(--sand-light)", description: "", backgroundClassName: "swatch-sand-light" },
+    { name: "Sand", value: "var(--sand)", description: "", backgroundClassName: "swatch-sand" },
+    { name: "Sand Dark", value: "var(--sand-dark)", description: "", backgroundClassName: "swatch-sand-dark" },
+    { name: "Mountain", value: "var(--mountain)", description: "", backgroundClassName: "swatch-mountain" },
+    { name: "Mountain Dark", value: "var(--mountain-dark)", description: "", backgroundClassName: "swatch-mountain-dark" },
+    { name: "Shop", value: "var(--shop)", description: "Special accent color", backgroundClassName: "swatch-shop" },
   ];
 
   const semanticColors = [
-    { name: "Background", value: "var(--background)", description: "Main background" },
-    { name: "Foreground", value: "var(--foreground)", description: "Main text color" },
-    { name: "Surface Card", value: "var(--surface-card)", description: "Card backgrounds" },
-    { name: "Surface Elevated", value: "var(--surface-elevated)", description: "Elevated surfaces" },
-    { name: "Border", value: "var(--border)", description: "Default borders" },
-    { name: "Muted", value: "var(--muted)", description: "Muted backgrounds" },
-    { name: "Muted Foreground", value: "var(--muted-foreground)", description: "Muted text" },
-    { name: "Accent", value: "var(--accent)", description: "Accent backgrounds" },
-    { name: "Accent Foreground", value: "var(--accent-foreground)", description: "Accent text" },
-    { name: "Destructive", value: "var(--destructive)", description: "Error/destructive" },
-    { name: "Destructive Foreground", value: "var(--destructive-foreground)", description: "Error text" },
+    { name: "Background", value: "var(--background)", description: "Main background", backgroundClassName: "swatch-background" },
+    { name: "Foreground", value: "var(--foreground)", description: "Main text color", backgroundClassName: "swatch-foreground" },
+    { name: "Surface Card", value: "var(--surface-card)", description: "Card backgrounds", backgroundClassName: "swatch-surface-card" },
+    { name: "Surface Elevated", value: "var(--surface-elevated)", description: "Elevated surfaces", backgroundClassName: "swatch-surface-elevated" },
+    { name: "Border", value: "var(--border)", description: "Default borders", backgroundClassName: "swatch-border" },
+    { name: "Muted", value: "var(--muted)", description: "Muted backgrounds", backgroundClassName: "swatch-muted" },
+    { name: "Muted Foreground", value: "var(--muted-foreground)", description: "Muted text", backgroundClassName: "swatch-muted-foreground" },
+    { name: "Accent", value: "var(--accent)", description: "Accent backgrounds", backgroundClassName: "swatch-accent" },
+    { name: "Accent Foreground", value: "var(--accent-foreground)", description: "Accent text", backgroundClassName: "swatch-accent-foreground" },
+    { name: "Destructive", value: "var(--destructive)", description: "Error/destructive", backgroundClassName: "swatch-destructive" },
+    {
+      name: "Destructive Foreground",
+      value: "var(--destructive-foreground)",
+      description: "Error text",
+      backgroundClassName: "swatch-destructive-foreground",
+    },
   ];
 
   const radii = [
-    { name: "Small", value: "var(--radius-sm)", computed: "calc(0.5rem - 4px)" },
-    { name: "Medium", value: "var(--radius-md)", computed: "calc(0.5rem - 2px)" },
-    { name: "Large", value: "var(--radius-lg)", computed: "0.5rem" },
+    { name: "Small", computed: "calc(0.5rem - 4px)", className: "radius-sm" },
+    { name: "Medium", computed: "calc(0.5rem - 2px)", className: "radius-md" },
+    { name: "Large", computed: "0.5rem", className: "radius-lg" },
   ];
 
   const shadows = [
-    { name: "Small", value: "var(--shadow-sm)", computed: "0 1px 2px rgba(0,0,0,0.05)" },
-    { name: "Medium", value: "var(--shadow-md)", computed: "0 2px 4px rgba(0,0,0,0.1)" },
+    { name: "Small", computed: "0 1px 2px rgba(0,0,0,0.05)", className: "shadow-token-sm" },
+    { name: "Medium", computed: "0 2px 4px rgba(0,0,0,0.1)", className: "shadow-token-md" },
   ];
 
   const tabs = [
@@ -83,9 +93,7 @@ export default function App() {
                   alt="DemoStoke logo"
                   className="w-10 h-10 object-contain"
                 />
-                <h1 style={{ fontFamily: "var(--font-brand)", fontSize: "1.5em" }}>
-                  DemoStoke Design System
-                </h1>
+                <h1 className="brand-heading">DemoStoke Design System</h1>
               </div>
               <p className="text-sm text-muted-foreground mt-1">
                 Complete token system with light & dark modes
@@ -140,6 +148,7 @@ export default function App() {
                     name={color.name}
                     value={color.value}
                     description={color.description}
+                    backgroundClassName={color.backgroundClassName}
                   />
                 ))}
               </div>
@@ -155,6 +164,7 @@ export default function App() {
                     name={color.name}
                     value={color.value}
                     description={color.description}
+                    backgroundClassName={color.backgroundClassName}
                   />
                 ))}
               </div>
@@ -170,6 +180,7 @@ export default function App() {
                     name={color.name}
                     value={color.value}
                     description={color.description}
+                    backgroundClassName={color.backgroundClassName}
                   />
                 ))}
               </div>
@@ -239,10 +250,7 @@ export default function App() {
                         {radius.computed}
                       </div>
                     </div>
-                    <div
-                      className="w-full h-24 bg-primary"
-                      style={{ borderRadius: radius.value }}
-                    />
+                    <div className={`w-full h-24 bg-primary ${radius.className}`} />
                   </div>
                 ))}
               </div>
@@ -260,10 +268,7 @@ export default function App() {
                         {shadow.computed}
                       </div>
                     </div>
-                    <div
-                      className="w-full h-24 bg-surface-card border rounded-lg flex items-center justify-center"
-                      style={{ boxShadow: shadow.value }}
-                    >
+                    <div className={`w-full h-24 bg-surface-card border rounded-lg flex items-center justify-center ${shadow.className}`}>
                       <div className="text-sm text-muted-foreground">Hover effect preview</div>
                     </div>
                   </div>
