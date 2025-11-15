@@ -1,0 +1,309 @@
+/* -----------------------------------------------------
+  DemoStoke DESIGN SYSTEM — COMPLETE CSS TOKEN EXPORT
+  Light + Dark Modes, Semantic Tokens, Primitives, Type, Radii, Shadows, Spacing
+------------------------------------------------------*/
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* -------------------------
+     BRAND COLORS
+  --------------------------*/
+  --brand-primary: #00DFFE;
+  --brand-primary-rgb: 0, 223, 254;
+  --brand-primary-hsl: 186 100% 50%;
+
+  /* -------------------------
+     PRIMITIVE COLORS
+  --------------------------*/
+  /* Ocean */
+  --ocean-light: #E5F2F8;
+  --ocean: #0EA5E9;
+  --ocean-deep: #0C4A6E;
+
+  /* Sand */
+  --sand-light: #FEF7E4;
+  --sand: #F3EACD;
+  --sand-dark: #E0D2AA;
+
+  /* Mountain */
+  --mountain: #6B7280;
+  --mountain-dark: #374151;
+
+  /* Shop */
+  --shop: rgb(211, 255, 0);
+  --shop-foreground: #000000;
+
+  /* -------------------------
+     LIGHT MODE — SEMANTIC COLORS
+  --------------------------*/
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(222.2 84% 4.9%);
+
+  --surface-card: hsl(0 0% 100%);
+  --surface-popover: hsl(0 0% 100%);
+  --surface-elevated: hsl(210 40% 96.1%);
+
+  --border: hsl(214.3 31.8% 91.4%);
+  --input: hsl(214.3 31.8% 91.4%);
+  --ring: hsl(199 89% 48%);
+
+  --muted: hsl(210 40% 96.1%);
+  --muted-foreground: hsl(215.4 16.3% 46.9%);
+
+  --accent: hsl(210 40% 96.1%);
+  --accent-foreground: hsl(222.2 47.4% 11.2%);
+
+  --destructive: hsl(0 84.2% 60.2%);
+  --destructive-foreground: hsl(210 40% 98%);
+
+  /* -------------------------
+     SIDEBAR
+  --------------------------*/
+  --sidebar-background: hsl(0 0% 98%);
+  --sidebar-foreground: hsl(240 5.3% 26.1%);
+  --sidebar-primary: hsl(240 5.9% 10%);
+  --sidebar-primary-foreground: hsl(0 0% 98%);
+  --sidebar-accent: hsl(240 4.8% 95.9%);
+  --sidebar-accent-foreground: hsl(240 5.9% 10%);
+  --sidebar-border: hsl(220 13% 91%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+
+  /* -------------------------
+     TYPOGRAPHY
+  --------------------------*/
+  --font-ui: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-brand: "Tahoma", sans-serif;
+
+  --text-display-size: 60px;
+  --text-h1-size: 48px;
+  --text-h2-size: 36px;
+  --text-h3-size: 30px;
+  --text-h4-size: 24px;
+  --text-h5-size: 20px;
+  --text-h6-size: 18px;
+  --text-body-lg-size: 18px;
+  --text-body-size: 16px;
+  --text-body-sm-size: 14px;
+  --text-label-size: 14px;
+  --text-label-sm-size: 12px;
+
+  --text-lineheight-tight: 1.1;
+  --text-lineheight-snug: 1.25;
+  --text-lineheight-normal: 1.5;
+
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+
+  /* -------------------------
+     SPACING (Tailwind scale)
+  --------------------------*/
+  --space-0: 0px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+  --space-40: 160px;
+  --space-48: 192px;
+  --space-56: 224px;
+  --space-64: 256px;
+
+  /* -------------------------
+     RADII
+  --------------------------*/
+  --radius-sm: calc(0.5rem - 4px);
+  --radius-md: calc(0.5rem - 2px);
+  --radius-lg: 0.5rem;
+
+  /* -------------------------
+     SHADOWS
+  --------------------------*/
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 2px 4px rgba(0,0,0,0.1);
+
+  /* -------------------------
+     COMPONENT TOKENS — BUTTONS
+  --------------------------*/
+  --button-primary-bg: var(--brand-primary);
+  --button-primary-fg: #000;
+
+  --button-secondary-bg: var(--sand);
+  --button-secondary-fg: #000;
+
+  --button-accent-bg: var(--ocean);
+  --button-accent-fg: #fff;
+
+  --button-muted-bg: var(--muted);
+  --button-muted-fg: var(--muted-foreground);
+
+  --button-destructive-bg: var(--destructive);
+  --button-destructive-fg: var(--destructive-foreground);
+
+  --button-ghost-bg: transparent;
+  --button-ghost-fg: var(--foreground);
+
+  --button-outline-bg: transparent;
+  --button-outline-fg: var(--foreground);
+  --button-outline-border: var(--border);
+}
+
+
+/* -----------------------------------------------------
+   DARK MODE TOKENS
+------------------------------------------------------*/
+.dark {
+  /* Branding */
+  --brand-primary: #0DA2E7;
+
+  /* Backgrounds */
+  --background: hsl(222.2 84% 4.9%);
+  --foreground: hsl(210 40% 98%);
+
+  --surface-card: hsl(222.2 84% 4.9%);
+  --surface-popover: hsl(222.2 84% 4.9%);
+  --surface-elevated: hsl(217.2 32.6% 17.5%);
+
+  --border: hsl(217.2 32.6% 17.5%);
+  --input: hsl(217.2 32.6% 17.5%);
+  --ring: hsl(224.3 76.3% 48%);
+
+  --muted: hsl(217.2 32.6% 17.5%);
+  --muted-foreground: hsl(215 20.2% 65.1%);
+
+  --accent: hsl(217.2 32.6% 17.5%);
+  --accent-foreground: hsl(210 40% 98%);
+
+  --destructive: hsl(0 62.8% 30.6%);
+  --destructive-foreground: hsl(210 40% 98%);
+
+  /* Sidebar */
+  --sidebar-background: hsl(240 5.9% 10%);
+  --sidebar-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-primary: hsl(224.3 76.3% 48%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(240 3.7% 15.9%);
+  --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-border: hsl(240 3.7% 15.9%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--surface-card);
+  --color-card-foreground: var(--foreground);
+  --color-popover: var(--surface-popover);
+  --color-popover-foreground: var(--foreground);
+  --color-primary: var(--brand-primary);
+  --color-primary-foreground: var(--button-primary-fg);
+  --color-secondary: var(--sand);
+  --color-secondary-foreground: var(--button-secondary-fg);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: calc(var(--radius-lg) + 4px);
+  --color-sidebar: var(--sidebar-background);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-ui);
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=' text-']), :not(:has([class^='text-'])))) {
+    h1 {
+      font-size: var(--text-h1-size);
+      font-weight: var(--font-weight-medium);
+      line-height: var(--text-lineheight-tight);
+    }
+
+    h2 {
+      font-size: var(--text-h2-size);
+      font-weight: var(--font-weight-medium);
+      line-height: var(--text-lineheight-snug);
+    }
+
+    h3 {
+      font-size: var(--text-h3-size);
+      font-weight: var(--font-weight-medium);
+      line-height: var(--text-lineheight-snug);
+    }
+
+    h4 {
+      font-size: var(--text-h4-size);
+      font-weight: var(--font-weight-medium);
+      line-height: var(--text-lineheight-normal);
+    }
+
+    h5 {
+      font-size: var(--text-h5-size);
+      font-weight: var(--font-weight-medium);
+      line-height: var(--text-lineheight-normal);
+    }
+
+    h6 {
+      font-size: var(--text-h6-size);
+      font-weight: var(--font-weight-medium);
+      line-height: var(--text-lineheight-normal);
+    }
+
+    p {
+      font-size: var(--text-body-size);
+      font-weight: var(--font-weight-normal);
+      line-height: var(--text-lineheight-normal);
+    }
+
+    label {
+      font-size: var(--text-label-size);
+      font-weight: var(--font-weight-medium);
+      line-height: var(--text-lineheight-normal);
+    }
+
+    button {
+      font-size: var(--text-body-size);
+      font-weight: var(--font-weight-medium);
+      line-height: var(--text-lineheight-normal);
+    }
+
+    input {
+      font-size: var(--text-body-size);
+      font-weight: var(--font-weight-normal);
+      line-height: var(--text-lineheight-normal);
+    }
+  }
+}
