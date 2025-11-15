@@ -1998,6 +1998,7 @@
 .brand-heading {
   font-family: var(--font-brand);
   font-size: 1.5em;
+  font-weight: bold;
 }
 
 .sidebar-dimensions {
