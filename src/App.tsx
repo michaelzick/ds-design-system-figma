@@ -111,7 +111,7 @@ export default function App() {
               className="p-2 rounded-md border hover:bg-muted transition-colors cursor-pointer"
               aria-label="Toggle theme"
             >
-              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              {isDark ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
             </button>
           </div>
         </div>
