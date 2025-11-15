@@ -176,11 +176,11 @@ export default function App() {
               </div>
             </section>
 
-            {/* Semantic Colors */}
+            {/* Category Colors */}
             <section>
-              <h2 className="mb-6">Semantic Colors</h2>
+              <h2 className="mb-6">Category Colors</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {semanticColors.map((color) => (
+                {categoryColors.map((color) => (
                   <ColorSwatch
                     key={color.name}
                     name={color.name}
@@ -192,11 +192,11 @@ export default function App() {
               </div>
             </section>
 
-            {/* Category Colors */}
+            {/* Semantic Colors */}
             <section>
-              <h2 className="mb-6">Category Colors</h2>
+              <h2 className="mb-6">Semantic Colors</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {categoryColors.map((color) => (
+                {semanticColors.map((color) => (
                   <ColorSwatch
                     key={color.name}
                     name={color.name}
