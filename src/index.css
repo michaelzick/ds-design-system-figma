@@ -1992,6 +1992,13 @@
   initial-value: 0;
 }
 
+:root {
+  --rose-500: #f43f5e;
+  --fuchsia-500: #d946ef;
+  --sky-500: #0ea5e9;
+  --orange-400: #fb923c;
+}
+
 /* -----------------------------------------------------
    Design system utility classes (moved from inline styles)
 ------------------------------------------------------*/
@@ -2184,6 +2191,22 @@
 
 .swatch-destructive-foreground {
   background-color: var(--destructive-foreground);
+}
+
+.swatch-rose-500 {
+  background-color: var(--rose-500);
+}
+
+.swatch-fuchsia-500 {
+  background-color: var(--fuchsia-500);
+}
+
+.swatch-sky-500 {
+  background-color: var(--sky-500);
+}
+
+.swatch-orange-400 {
+  background-color: var(--orange-400);
 }
 
 .spacing-space-0 {

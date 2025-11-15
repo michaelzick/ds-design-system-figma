@@ -58,6 +58,13 @@ export default function App() {
     },
   ];
 
+  const categoryColors = [
+    { name: "Snowboards", value: "var(--rose-500)", description: "Category color", backgroundClassName: "swatch-rose-500" },
+    { name: "Skis", value: "var(--fuchsia-500)", description: "Category color", backgroundClassName: "swatch-fuchsia-500" },
+    { name: "Surfboards", value: "var(--sky-500)", description: "Category color", backgroundClassName: "swatch-sky-500" },
+    { name: "Mountain Bikes", value: "var(--orange-400)", description: "Category color", backgroundClassName: "swatch-orange-400" },
+  ];
+
   const radii = [
     { name: "Small", computed: "calc(0.5rem - 4px)", className: "radius-sm" },
     { name: "Medium", computed: "calc(0.5rem - 2px)", className: "radius-md" },
@@ -174,6 +181,22 @@ export default function App() {
               <h2 className="mb-6">Semantic Colors</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {semanticColors.map((color) => (
+                  <ColorSwatch
+                    key={color.name}
+                    name={color.name}
+                    value={color.value}
+                    description={color.description}
+                    backgroundClassName={color.backgroundClassName}
+                  />
+                ))}
+              </div>
+            </section>
+
+            {/* Category Colors */}
+            <section>
+              <h2 className="mb-6">Category Colors</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {categoryColors.map((color) => (
                   <ColorSwatch
                     key={color.name}
                     name={color.name}
