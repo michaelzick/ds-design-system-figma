@@ -116,7 +116,7 @@ export default function App() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`px-4 py-3 text-sm transition-colors relative whitespace-nowrap ${
+                  className={`cursor-pointer px-4 py-3 text-sm transition-colors relative whitespace-nowrap ${
                     activeTab === tab.id
                       ? "text-foreground"
                       : "text-muted-foreground hover:text-foreground"
