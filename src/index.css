@@ -2008,6 +2008,14 @@
   font-weight: bold;
 }
 
+.header-stack {
+  z-index: 100;
+}
+
+.nav-stack {
+  z-index: 101;
+}
+
 .sidebar-dimensions {
   --sidebar-width: 16rem;
   --sidebar-width-icon: 3rem;

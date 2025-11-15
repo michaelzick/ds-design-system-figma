@@ -94,7 +94,7 @@ export default function App() {
     <div className="min-h-screen bg-background">
       <div ref={pageTopRef} />
       {/* Header */}
-      <header className="sticky top-0 z-20 bg-background/95 backdrop-blur">
+      <header className="sticky top-0 bg-background backdrop-blur shadow-sm header-stack">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div>
@@ -120,7 +120,7 @@ export default function App() {
           </div>
         </div>
         {/* Navigation */}
-        <nav className="border-t border-b bg-background/95 backdrop-blur">
+        <nav className="relative border-t border-b bg-background backdrop-blur nav-stack">
           <div className="container mx-auto px-6">
             <div className="flex gap-1 overflow-x-auto">
               {tabs.map((tab) => (
