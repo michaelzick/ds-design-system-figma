@@ -70,6 +70,8 @@ type HorizontalScrollSectionProps<T> = {
   isLoading?: boolean;
   renderItem: (item: T, index: number) => ReactNode;
   desktopCols?: { md: number; lg: number };
+  viewAllHref?: string;
+  viewAllLabel?: string;
 };
 
 function ChevronLeftIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -94,7 +96,9 @@ export function HorizontalScrollSection<T>({
   items,
   isLoading,
   renderItem,
-  desktopCols = { md: 3, lg: 5 }
+  desktopCols = { md: 3, lg: 5 },
+  viewAllHref,
+  viewAllLabel = "View All"
 }: HorizontalScrollSectionProps<T>) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -154,6 +158,13 @@ export function HorizontalScrollSection<T>({
           {items.map((item, index) => renderItem(item, index))}
         </div>
       </div>
+      {viewAllHref && (
+        <div className="hs-view-all">
+          <div className="hs-container">
+            <a href={viewAllHref}>{viewAllLabel}</a>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
@@ -206,6 +217,8 @@ export function FeaturedBlogSectionDemo() {
         title="Horizontal Scroll Container"
         items={featuredPosts}
         desktopCols={{ md: 3, lg: 5 }}
+        viewAllHref="/blog"
+        viewAllLabel="View All"
         renderItem={(post) => (
           <a key={post.id} href={post.href ?? "#"} className="hs-card group">
             <div className="hs-thumb">
@@ -217,11 +230,6 @@ export function FeaturedBlogSectionDemo() {
           </a>
         )}
       />
-      <div className="hs-view-all">
-        <div className="hs-container">
-          <a href="/blog">View All Posts</a>
-        </div>
-      </div>
     </>
   );
 }
