@@ -7,10 +7,15 @@ import { Switch } from "./ui/switch";
 import { Badge } from "./ui/badge";
 import { Alert, AlertDescription, AlertTitle } from "./ui/alert";
 import { AlertCircle, ShoppingCart, Bell } from "lucide-react";
+import { FeaturedBlogSectionDemo } from "./HorizontalScrollSection";
 
 export function ComponentShowcase() {
   return (
     <div className="space-y-12">
+      <div className="-mx-6 sm:-mx-8">
+        <FeaturedBlogSectionDemo />
+      </div>
+
       {/* Cards */}
       <section>
         <h2 className="mb-6">Cards</h2>
@@ -75,19 +80,19 @@ export function ComponentShowcase() {
           <CardContent className="space-y-6">
             <div className="space-y-2">
               <Label htmlFor="name">Name</Label>
-              <Input 
-                id="name" 
-                placeholder="Enter your name" 
+              <Input
+                id="name"
+                placeholder="Enter your name"
                 defaultValue="John Doe"
               />
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
-              <Input 
-                id="email" 
-                type="email" 
-                placeholder="you@example.com" 
+              <Input
+                id="email"
+                type="email"
+                placeholder="you@example.com"
               />
             </div>
 
