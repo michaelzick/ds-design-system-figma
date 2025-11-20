@@ -345,4 +345,39 @@
   .swatch-fuchsia-500 { background-color: #d946ef; }
   .swatch-sky-500 { background-color: #0ea5e9; }
   .swatch-orange-400 { background-color: #fb923c; }
+
+  /* Button token helpers (Buttons tab) */
+  .token-button-primary { background: var(--button-primary-bg); color: var(--button-primary-fg); }
+  .token-button-secondary { background: var(--button-secondary-bg); color: var(--button-secondary-fg); }
+  .token-button-accent { background: var(--button-accent-bg); color: var(--button-accent-fg); }
+  .token-button-muted { background: var(--button-muted-bg); color: var(--button-muted-fg); }
+  .token-button-destructive { background: var(--button-destructive-bg); color: var(--button-destructive-fg); }
+  .token-button-ghost { background: var(--button-ghost-bg); color: var(--button-ghost-fg); }
+  .token-button-outline { background: var(--button-outline-bg); color: var(--button-outline-fg); border-color: var(--button-outline-border); }
+  .token-border-input { border-color: var(--input); }
+  .shop-accent { background: var(--shop); color: var(--shop-foreground); }
+
+  /* Typography helpers (Typography tab) */
+  .type-display { font-family: var(--font-brand); font-size: var(--text-display-size); line-height: var(--text-lineheight-tight); font-weight: var(--font-weight-medium); }
+  .type-body-lg { font-size: var(--text-body-lg-size); line-height: var(--text-lineheight-normal); }
+  .type-body-sm { font-size: var(--text-body-sm-size); line-height: var(--text-lineheight-normal); }
+  .type-label-sm { font-size: var(--text-label-sm-size); line-height: var(--text-lineheight-normal); font-weight: var(--font-weight-medium); }
+
+  /* Badge and alert helpers (Components tab) */
+  .badge-ocean { background-color: var(--ocean); color: #fff; }
+  .badge-sand { background-color: var(--sand); color: var(--mountain-dark); }
+  .badge-shop { background-color: var(--shop); color: var(--shop-foreground); }
+
+  .alert-ocean { background-color: var(--ocean-light); border-color: var(--ocean); }
+  .alert-ocean-icon { color: var(--ocean); }
+  .alert-ocean-text { color: var(--ocean-deep); }
+
+  .alert-sand { background-color: var(--sand-light); border-color: var(--sand); }
+  .alert-sand-icon { color: var(--sand-dark); }
+  .alert-sand-text { color: var(--mountain-dark); }
+
+  /* Header/title helpers */
+  .brand-heading { font-family: var(--font-brand); font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em; }
+  .header-stack { position: relative; z-index: 30; }
+  .nav-stack { position: relative; z-index: 20; }
 }
