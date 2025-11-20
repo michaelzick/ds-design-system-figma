@@ -380,4 +380,27 @@
   .brand-heading { font-family: var(--font-brand); font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em; }
   .header-stack { position: relative; z-index: 30; }
   .nav-stack { position: relative; z-index: 20; }
+
+  /* Effects page helpers */
+  .radius-sm { border-radius: var(--radius-sm); }
+  .radius-md { border-radius: var(--radius-md); }
+  .radius-lg { border-radius: var(--radius-lg); }
+  .shadow-token-sm { box-shadow: var(--shadow-sm); }
+  .shadow-token-md { box-shadow: var(--shadow-md); }
+
+  /* Spacing helpers (Spacing tab) */
+  .spacing-space-0 { width: var(--space-0); }
+  .spacing-space-1 { width: var(--space-1); }
+  .spacing-space-2 { width: var(--space-2); }
+  .spacing-space-3 { width: var(--space-3); }
+  .spacing-space-4 { width: var(--space-4); }
+  .spacing-space-5 { width: var(--space-5); }
+  .spacing-space-6 { width: var(--space-6); }
+  .spacing-space-8 { width: var(--space-8); }
+  .spacing-space-10 { width: var(--space-10); }
+  .spacing-space-12 { width: var(--space-12); }
+  .spacing-space-16 { width: var(--space-16); }
+  .spacing-space-20 { width: var(--space-20); }
+  .spacing-space-24 { width: var(--space-24); }
+  .spacing-space-32 { width: var(--space-32); }
 }
