@@ -169,32 +169,32 @@ type BlogPostCard = {
 const featuredPosts: BlogPostCard[] = [
   {
     id: "mountain-bike-beginner-guide",
-    title: "The Complete Beginner's Guide to Mountain Biking",
-    thumbnail: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=800&q=80",
+    title: "Top 10 Snowboarding Resorts in North America Revealed",
+    thumbnail: "https://asomammoth.com/wp-content/uploads/2022/12/Freestyle-Snowboarding.jpg",
     href: "/blog/mountain-bike-beginner-guide"
   },
   {
     id: "ski-waxing-guide",
-    title: "The Complete Guide to Ski Waxing: Keep Your Skis Running Fast",
-    thumbnail: "https://shop-raze-cat.com/cdn/shop/articles/warum-ski-wachsen-und-welches-wachs-sollte-ich-benutzen-raze-cat.jpg?v=1712086056",
+    title: "Surfboard Tails: Choosing the Perfect Shape",
+    thumbnail: "https://surfbetternow.com/wp-content/uploads/2022/04/surf-surfboards-tails-diferentes-colas-surfing-tablas.jpg",
     href: "/blog/ski-waxing-guide"
   },
   {
     id: "from-rentals-to-doa",
-    title: "From Rentals to the Capita DOA: My First Season Progression",
-    thumbnail: "https://qtlhqsqanbxgfbcjigrl.supabase.co/storage/v1/object/public/blog-images//admin-image-1751601805697-Capita%20Against%20Rail.jpg",
+    title: "Skiing vs. Snowboarding: Which Sport is Tougher?",
+    thumbnail: "https://cdn.shipskis.com/blog/wp-content/uploads/2023/09/skiing-vs.-snowboarding.jpg",
     href: "/blog/from-rentals-to-doa"
   },
   {
     id: "from-foamie-to-fresh-powder",
-    title: "From Foamie To Fresh Powder: How I Became Demo-Obsessed",
-    thumbnail: "https://www.theinertia.com/wp-content/uploads/2020/07/SurfCare1200.jpg",
+    title: "The Healing Power of Outdoor Sports: Elevating Mental Health Through Nature (Part 2)",
+    thumbnail: "https://media.istockphoto.com/id/1283724464/photo/winter-holidays-in-ski-resort.jpg?s=612x612&w=0&k=20&c=iG7eOjrZURGlmqEdRHruj49OpABfcF_hKEvhKIvK_wM=",
     href: "/blog/from-foamie-to-fresh-powder"
   },
   {
     id: "snowboard-buying-guide-2025",
-    title: "The Ultimate Snowboard Buying Guide for 2025",
-    thumbnail: "https://neversummer.com/cdn/shop/articles/10TipsBlog.jpg?v=1653255663",
+    title: "Tom Wallisch Pro Skis 2025 Review: Jib-Ready Freestyle Fun",
+    thumbnail: "https://m.media-amazon.com/images/I/51s++VpbszL._UF1000,1000_QL80_.jpg",
     href: "/blog/snowboard-buying-guide-2025"
   }
 ];
