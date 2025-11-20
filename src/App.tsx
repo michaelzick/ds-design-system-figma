@@ -96,7 +96,7 @@ export default function App() {
     <div className="min-h-screen bg-background">
       <div ref={pageTopRef} />
       {/* Header */}
-      <header className="sticky top-0 bg-background backdrop-blur shadow-sm header-stack">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 supports-[backdrop-filter]:bg-background/80 backdrop-blur shadow-sm header-stack">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div>
@@ -122,7 +122,7 @@ export default function App() {
           </div>
         </div>
         {/* Navigation */}
-        <nav className="relative border-t border-b bg-background backdrop-blur nav-stack">
+        <nav className="border-t border-b bg-background/95 supports-[backdrop-filter]:bg-background/80 backdrop-blur nav-stack">
           <div className="container mx-auto px-6">
             <div className="flex gap-1 overflow-x-auto">
               {tabs.map((tab) => (
@@ -147,7 +147,7 @@ export default function App() {
       </header>
 
       {/* Content */}
-      <main className="container mx-auto px-6 py-12">
+      <main className="container mx-auto px-6 pt-36 md:pt-40 pb-12">
         {activeTab === "colors" && (
           <div className="space-y-12">
             {/* Brand Colors */}
