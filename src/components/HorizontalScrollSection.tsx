@@ -133,31 +133,31 @@ const featuredPosts: BlogPostCard[] = [
     id: "mountain-bike-beginner-guide",
     title: "Top 10 Snowboarding Resorts in North America Revealed",
     thumbnail: "https://asomammoth.com/wp-content/uploads/2022/12/Freestyle-Snowboarding.jpg",
-    href: "/blog/mountain-bike-beginner-guide"
+    href: "#"
   },
   {
     id: "ski-waxing-guide",
     title: "Surfboard Tails: Choosing the Perfect Shape",
     thumbnail: "https://surfbetternow.com/wp-content/uploads/2022/04/surf-surfboards-tails-diferentes-colas-surfing-tablas.jpg",
-    href: "/blog/ski-waxing-guide"
+    href: "#"
   },
   {
     id: "from-rentals-to-doa",
     title: "Skiing vs. Snowboarding: Which Sport is Tougher?",
     thumbnail: "https://cdn.shipskis.com/blog/wp-content/uploads/2023/09/skiing-vs.-snowboarding.jpg",
-    href: "/blog/from-rentals-to-doa"
+    href: "#"
   },
   {
     id: "from-foamie-to-fresh-powder",
     title: "The Healing Power of Outdoor Sports: Elevating Mental Health Through Nature (Part 2)",
     thumbnail: "https://media.istockphoto.com/id/1283724464/photo/winter-holidays-in-ski-resort.jpg?s=612x612&w=0&k=20&c=iG7eOjrZURGlmqEdRHruj49OpABfcF_hKEvhKIvK_wM=",
-    href: "/blog/from-foamie-to-fresh-powder"
+    href: "#"
   },
   {
     id: "snowboard-buying-guide-2025",
     title: "Tom Wallisch Pro Skis 2025 Review: Jib-Ready Freestyle Fun",
     thumbnail: "https://m.media-amazon.com/images/I/51s++VpbszL._UF1000,1000_QL80_.jpg",
-    href: "/blog/snowboard-buying-guide-2025"
+    href: "#"
   }
 ];
 
@@ -168,7 +168,7 @@ export function FeaturedBlogSectionDemo() {
         title="Horizontal Scroll Container"
         items={featuredPosts}
         desktopCols={{ md: 3, lg: 5 }}
-        viewAllHref="/blog"
+        viewAllHref="#"
         viewAllLabel="View All"
         renderItem={(post) => (
           <a
