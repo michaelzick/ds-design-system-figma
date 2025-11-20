@@ -232,7 +232,8 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    /* Set a default border color; outline color is handled per component when needed */
+    @apply border-border;
   }
 
   body {

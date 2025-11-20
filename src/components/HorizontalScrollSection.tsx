@@ -1,69 +1,5 @@
 import React, { useEffect, useRef, useState, ReactNode } from "react";
 
-// ---- Styles pulled from the existing Tailwind setup (ocean palette, spacing, hover states)
-const horizontalScrollStyles = `
-:root {
-  --ocean-deep: #0C4A6E;
-  --ocean: #0EA5E9;
-}
-.hs-section { padding: 40px 0 20px; background: var(--surface-card, #fff); color: var(--foreground, #0f172a); border: 2px solid var(--border, #0f172a); border-radius: 12px; }
-.hs-container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 16px; }
-@media (min-width: 640px) { .hs-container { padding: 0 24px; } }
-@media (min-width: 1024px) { .hs-container { padding: 0 32px; } }
-
-.hs-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
-.hs-title { font-size: 24px; font-weight: 600; }
-
-.hs-nav { display: flex; gap: 8px; }
-@media (min-width: 768px) { .hs-nav { display: none; } }
-.hs-nav button {
-  height: 32px; width: 32px; display: grid; place-items: center;
-  background: transparent; border: 1px solid #737373; color: #e5e7eb;
-  border-radius: 8px; transition: all 0.2s ease; cursor: pointer;
-}
-.hs-nav button:hover:not(:disabled) { border-color: #d4d4d8; color: #fff; background: rgba(255,255,255,0.08); }
-.hs-nav button:disabled { cursor: not-allowed; opacity: 0.45; }
-
-.hs-track {
-  display: flex; overflow-x: auto; gap: 20px; padding-bottom: 16px;
-  scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none;
-}
-.hs-track::-webkit-scrollbar { display: none; }
-
-.hs-card { scroll-snap-align: start; width: 208px; min-width: 208px; flex-shrink: 0; text-decoration: none; color: inherit; }
-.hs-thumb { width: 100%; padding-top: 100%; position: relative; overflow: hidden; border-radius: 12px; margin-bottom: 10px; background: #0f172a; }
-.hs-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
-.hs-card:hover .hs-thumb img { transform: scale(1.1); }
-.hs-heading { font-size: 14px; font-weight: 600; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: left; }
-.hs-heading { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-
-@media (min-width: 768px) {
-  .hs-track { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; overflow: visible; scroll-snap-type: none; }
-  .hs-card { width: auto; min-width: 0; }
-  .hs-md-cols-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
-  .hs-md-cols-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
-  .hs-md-cols-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
-  .hs-md-cols-5 { grid-template-columns: repeat(5, minmax(0,1fr)); }
-}
-@media (min-width: 1024px) {
-  .hs-lg-cols-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
-  .hs-lg-cols-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
-  .hs-lg-cols-4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
-  .hs-lg-cols-5 { grid-template-columns: repeat(5, minmax(0,1fr)); }
-  .hs-lg-cols-6 { grid-template-columns: repeat(6, minmax(0,1fr)); }
-}
-
-.hs-view-all { background: transparent; padding: 0 0 40px; }
-.hs-view-all .hs-container { display: flex; }
-.hs-view-all a {
-  display: inline-flex; align-items: center; justify-content: center;
-  padding: 12px 20px; border: 1px solid var(--border, #0f172a); color: var(--foreground, #0f172a); border-radius: 10px;
-  background: rgba(15,23,42,0.05); text-decoration: none; font-weight: 600;
-  transition: all 0.2s ease;
-}
-.hs-view-all a:hover { background: rgba(15,23,42,0.1); border-color: var(--foreground, #0f172a); }
-`;
-
 type HorizontalScrollSectionProps<T> = {
   title: string;
   items: T[];
@@ -131,40 +67,55 @@ export function HorizontalScrollSection<T>({
   if (isLoading || !items || items.length === 0) return null;
 
   const trackClassName = [
-    "hs-track",
-    `hs-md-cols-${desktopCols.md}`,
-    `hs-lg-cols-${desktopCols.lg}`
+    desktopCols.md === 2 ? "md:grid-cols-2" : desktopCols.md === 4 ? "md:grid-cols-4" : desktopCols.md === 5 ? "md:grid-cols-5" : "md:grid-cols-3",
+    desktopCols.lg === 2 ? "lg:grid-cols-2" : desktopCols.lg === 3 ? "lg:grid-cols-3" : desktopCols.lg === 4 ? "lg:grid-cols-4" : desktopCols.lg === 6 ? "lg:grid-cols-6" : "lg:grid-cols-5"
   ].join(" ");
 
   const scrollByAmount = 228; // card width + gap on mobile
 
   return (
-    <section className="hs-section">
-      <style>{horizontalScrollStyles}</style>
-      <div className="hs-container">
-        <div className="hs-header">
-          <h2 className="hs-title">{title}</h2>
-          <div className="hs-nav">
-            <button onClick={() => scrollContainerRef.current?.scrollBy({ left: -scrollByAmount, behavior: "smooth" })} disabled={!canScrollLeft} aria-label="Scroll left">
+    <section className="bg-surface-card text-foreground border-2 border-border rounded-xl py-10 pb-5">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <div className="flex items-center justify-between">
+          <h2 className="text-2xl font-semibold">{title}</h2>
+          <div className="flex gap-2 md:hidden">
+            <button
+              onClick={() => scrollContainerRef.current?.scrollBy({ left: -scrollByAmount, behavior: "smooth" })}
+              disabled={!canScrollLeft}
+              aria-label="Scroll left"
+              className="h-8 w-8 grid place-items-center rounded-lg border border-border text-foreground transition hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+            >
               <ChevronLeftIcon />
             </button>
-            <button onClick={() => scrollContainerRef.current?.scrollBy({ left: scrollByAmount, behavior: "smooth" })} disabled={!canScrollRight} aria-label="Scroll right">
+            <button
+              onClick={() => scrollContainerRef.current?.scrollBy({ left: scrollByAmount, behavior: "smooth" })}
+              disabled={!canScrollRight}
+              aria-label="Scroll right"
+              className="h-8 w-8 grid place-items-center rounded-lg border border-border text-foreground transition hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+            >
               <ChevronRightIcon />
             </button>
           </div>
         </div>
 
-        <div ref={scrollContainerRef} className={trackClassName}>
+        <div
+          ref={scrollContainerRef}
+          className={`${trackClassName} flex overflow-x-auto gap-5 pb-4 snap-x snap-mandatory scroll-smooth [-ms-overflow-style:'none'] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:gap-6 md:overflow-visible md:snap-none`}
+        >
           {items.map((item, index) => renderItem(item, index))}
         </div>
-      </div>
-      {viewAllHref && (
-        <div className="hs-view-all">
-          <div className="hs-container">
-            <a href={viewAllHref}>{viewAllLabel}</a>
+
+        {viewAllHref && (
+          <div className="flex">
+            <a
+              href={viewAllHref}
+              className="inline-flex items-center justify-center px-5 py-3 rounded-lg border-2 border-border text-foreground bg-muted/40 hover:bg-muted/60 transition font-semibold"
+            >
+              {viewAllLabel}
+            </a>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </section>
   );
 }
@@ -220,11 +171,20 @@ export function FeaturedBlogSectionDemo() {
         viewAllHref="/blog"
         viewAllLabel="View All"
         renderItem={(post) => (
-          <a key={post.id} href={post.href ?? "#"} className="hs-card group">
-            <div className="hs-thumb">
-              <img src={post.thumbnail} alt={post.title} loading="lazy" />
+          <a
+            key={post.id}
+            href={post.href ?? "#"}
+            className="group snap-start w-[208px] min-w-[208px] shrink-0 text-foreground no-underline md:w-auto md:min-w-0"
+          >
+            <div className="relative w-full pt-[100%] overflow-hidden rounded-xl mb-2.5 bg-slate-900">
+              <img
+                src={post.thumbnail}
+                alt={post.title}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-110"
+              />
             </div>
-            <h3 className="hs-heading text-sm font-medium leading-tight group-hover:text-primary transition-colors line-clamp-2 text-left">
+            <h3 className="text-sm font-medium leading-tight group-hover:text-primary transition-colors line-clamp-2 text-left">
               {post.title}
             </h3>
           </a>
