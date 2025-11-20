@@ -96,7 +96,7 @@ export default function App() {
     <div className="min-h-screen bg-background">
       <div ref={pageTopRef} />
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 supports-[backdrop-filter]:bg-background/80 backdrop-blur shadow-sm header-stack">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[color:color-mix(in_srgb,var(--background)_92%,transparent)] supports-[backdrop-filter]:bg-[color:color-mix(in_srgb,var(--background)_88%,transparent)] backdrop-blur shadow-sm header-stack">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div>
@@ -122,7 +122,7 @@ export default function App() {
           </div>
         </div>
         {/* Navigation */}
-        <nav className="border-t border-b bg-background/95 supports-[backdrop-filter]:bg-background/80 backdrop-blur nav-stack">
+        <nav className="border-t border-b bg-[color:color-mix(in_srgb,var(--background)_92%,transparent)] supports-[backdrop-filter]:bg-[color:color-mix(in_srgb,var(--background)_88%,transparent)] backdrop-blur nav-stack">
           <div className="container mx-auto px-6">
             <div className="flex gap-1 overflow-x-auto">
               {tabs.map((tab) => (
