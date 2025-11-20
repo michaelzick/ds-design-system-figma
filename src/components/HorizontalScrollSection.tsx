@@ -6,7 +6,7 @@ const horizontalScrollStyles = `
   --ocean-deep: #0C4A6E;
   --ocean: #0EA5E9;
 }
-.hs-section { padding: 40px 0 20px; background: var(--ocean-deep); color: #fff; }
+.hs-section { padding: 40px 0 20px; background: var(--surface-card, #fff); color: var(--foreground, #0f172a); border: 2px solid var(--border, #0f172a); border-radius: 12px; }
 .hs-container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 16px; }
 @media (min-width: 640px) { .hs-container { padding: 0 24px; } }
 @media (min-width: 1024px) { .hs-container { padding: 0 32px; } }
@@ -53,15 +53,15 @@ const horizontalScrollStyles = `
   .hs-lg-cols-6 { grid-template-columns: repeat(6, minmax(0,1fr)); }
 }
 
-.hs-view-all { background: var(--ocean-deep); padding: 0 0 40px; }
+.hs-view-all { background: transparent; padding: 0 0 40px; }
 .hs-view-all .hs-container { display: flex; }
 .hs-view-all a {
   display: inline-flex; align-items: center; justify-content: center;
-  padding: 12px 20px; border: 1px solid #fff; color: #fff; border-radius: 10px;
-  background: rgba(255,255,255,0.12); text-decoration: none; font-weight: 600;
+  padding: 12px 20px; border: 1px solid var(--border, #0f172a); color: var(--foreground, #0f172a); border-radius: 10px;
+  background: rgba(15,23,42,0.05); text-decoration: none; font-weight: 600;
   transition: all 0.2s ease;
 }
-.hs-view-all a:hover { background: rgba(255,255,255,0.2); border-color: #e5e7eb; }
+.hs-view-all a:hover { background: rgba(15,23,42,0.1); border-color: var(--foreground, #0f172a); }
 `;
 
 type HorizontalScrollSectionProps<T> = {
