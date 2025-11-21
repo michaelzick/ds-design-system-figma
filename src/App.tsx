@@ -109,7 +109,7 @@ export default function App() {
                 <h1 className="brand-heading">DemoStoke Design System</h1>
               </div>
               <p className="text-sm text-muted-foreground mt-1">
-                Complete token system with light & dark modes
+                Complete token system with light & dark modes.
               </p>
             </div>
             <button
