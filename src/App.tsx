@@ -319,7 +319,15 @@ export default function App() {
       <footer className="border-t mt-24 py-8">
         <div className="container mx-auto px-6">
           <p className="text-sm text-muted-foreground text-center">
-            DemoStoke Design System • © 2025 ZICKONEZERO Creative
+            DemoStoke Design System • © 2025{" "}
+            <a
+              href="https://www.zickonezero.com/"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-primary hover:underline"
+            >
+              ZICKONEZERO Creative
+            </a>
           </p>
         </div>
       </footer>
