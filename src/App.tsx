@@ -1,5 +1,5 @@
-import { useRef, useState } from "react";
-import { Moon, Sun, Copy, Check } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Moon, Sun, Check, Laptop } from "lucide-react";
 import { ColorSwatch } from "./components/ColorSwatch";
 import { TypographyShowcase } from "./components/TypographyShowcase";
 import { ButtonShowcase } from "./components/ButtonShowcase";
@@ -10,16 +10,66 @@ import { ExportTokens } from "./components/ExportTokens";
 import logoStripe from "./assets/images/ds-logo-stripes-fuchsia.webp";
 import { useScrollToTop } from "./hooks/useScrollToTop";
 
+type ThemeOption = "light" | "dark" | "system";
+
+const THEME_OPTIONS: { id: ThemeOption; label: string; icon: typeof Sun }[] = [
+  { id: "light", label: "Light", icon: Sun },
+  { id: "dark", label: "Dark", icon: Moon },
+  { id: "system", label: "System", icon: Laptop },
+];
+
 export default function App() {
-  const [isDark, setIsDark] = useState(false);
+  const [theme, setTheme] = useState<ThemeOption>("system");
+  const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("colors");
   const pageTopRef = useRef<HTMLDivElement | null>(null);
+  const themeMenuRef = useRef<HTMLDivElement | null>(null);
   useScrollToTop(activeTab, pageTopRef);
 
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    document.documentElement.classList.toggle("dark");
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const resolvedTheme = theme === "system" ? (prefersDark ? "dark" : "light") : theme;
+    document.documentElement.classList.toggle("dark", resolvedTheme === "dark");
+  }, [theme]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (theme !== "system") return;
+
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleChange = (event: MediaQueryListEvent) => {
+      document.documentElement.classList.toggle("dark", event.matches);
+    };
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener("change", handleChange);
+      return () => mediaQuery.removeEventListener("change", handleChange);
+    }
+
+    mediaQuery.addListener(handleChange);
+    return () => mediaQuery.removeListener(handleChange);
+  }, [theme]);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (themeMenuRef.current && !themeMenuRef.current.contains(event.target as Node)) {
+        setIsThemeMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleThemeSelection = (option: ThemeOption) => {
+    setTheme(option);
+    setIsThemeMenuOpen(false);
   };
+
+  const currentThemeOption = THEME_OPTIONS.find((option) => option.id === theme) ?? THEME_OPTIONS[2];
+  const CurrentIcon = currentThemeOption.icon;
 
   const brandColors = [
     {
@@ -112,13 +162,43 @@ export default function App() {
                 Complete token system with light & dark modes.
               </p>
             </div>
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-md border hover:bg-muted transition-colors cursor-pointer"
-              aria-label="Toggle theme"
-            >
-              {isDark ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
-            </button>
+            <div className="relative" ref={themeMenuRef}>
+              <button
+                onClick={() => setIsThemeMenuOpen((open) => !open)}
+                className="flex items-center gap-2 px-3 py-2 rounded-md border hover:bg-muted transition-colors cursor-pointer"
+                aria-label="Select theme"
+                aria-haspopup="menu"
+                aria-expanded={isThemeMenuOpen}
+              >
+                <CurrentIcon className="w-5 h-5" />
+                <span className="text-sm font-medium hidden sm:inline">{currentThemeOption.label}</span>
+              </button>
+              {isThemeMenuOpen && (
+                <div
+                  className="absolute right-0 mt-2 w-40 rounded-md border bg-surface-popover shadow-md py-1 z-50"
+                  role="menu"
+                  aria-label="Theme selection"
+                >
+                  {THEME_OPTIONS.map((option) => {
+                    const OptionIcon = option.icon;
+                    const isActive = theme === option.id;
+                    return (
+                      <button
+                        key={option.id}
+                        onClick={() => handleThemeSelection(option.id)}
+                        className={`w-full flex items-center gap-2 px-3 py-2 text-sm text-left transition-colors hover:bg-muted ${isActive ? "text-foreground" : "text-muted-foreground"}`}
+                        role="menuitemradio"
+                        aria-checked={isActive}
+                      >
+                        <OptionIcon className="w-4 h-4" />
+                        <span>{option.label}</span>
+                        {isActive && <Check className="w-4 h-4 ml-auto" />}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
           </div>
         </div>
         {/* Navigation */}
