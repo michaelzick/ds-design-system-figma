@@ -6,9 +6,9 @@ export function ExportTokens() {
   const generateJSON = () => {
     const tokens = {
       brand: {
-        primary: "#00DFFE",
-        "primary-rgb": "0, 223, 254",
-        "primary-hsl": "186 100% 50%",
+        primary: "#0DA2E7",
+        "primary-rgb": "13, 162, 231",
+        "primary-hsl": "199 89% 48%",
       },
       primitives: {
         ocean: {
@@ -128,9 +128,9 @@ export function ExportTokens() {
   const generateCSS = () => {
     return `:root {
   /* Brand Colors */
-  --brand-primary: #00DFFE;
-  --brand-primary-rgb: 0, 223, 254;
-  --brand-primary-hsl: 186 100% 50%;
+  --brand-primary: #0DA2E7;
+  --brand-primary-rgb: 13, 162, 231;
+  --brand-primary-hsl: 199 89% 48%;
 
   /* Primitive Colors - Ocean */
   --ocean-light: #E5F2F8;
@@ -214,7 +214,7 @@ export function ExportTokens() {
 }
 
 .dark {
-  --brand-primary: #0DA2E7;
+  --brand-primary: #00DFFE;
   --background: hsl(222.2 84% 4.9%);
   --foreground: hsl(210 40% 98%);
   --surface-card: hsl(222.2 84% 4.9%);

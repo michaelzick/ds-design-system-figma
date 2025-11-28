@@ -9,9 +9,9 @@
   /* -------------------------
      BRAND COLORS
   --------------------------*/
-  --brand-primary: #00DFFE;
-  --brand-primary-rgb: 0, 223, 254;
-  --brand-primary-hsl: 186 100% 50%;
+  --brand-primary: #0DA2E7;
+  --brand-primary-rgb: 13, 162, 231;
+  --brand-primary-hsl: 199 89% 48%;
 
   /* -------------------------
      PRIMITIVE COLORS
@@ -164,7 +164,7 @@
 ------------------------------------------------------*/
 .dark {
   /* Branding */
-  --brand-primary: #0DA2E7;
+  --brand-primary: #00DFFE;
 
   /* Backgrounds */
   --background: hsl(222.2 84% 4.9%);
